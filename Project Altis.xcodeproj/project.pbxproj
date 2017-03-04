@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80D450C01E6B02B000154B13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450BF1E6B02B000154B13 /* AppDelegate.swift */; };
+		80D450C21E6B02B000154B13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450C11E6B02B000154B13 /* ViewController.swift */; };
+		80D450C41E6B02B000154B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D450C31E6B02B000154B13 /* Assets.xcassets */; };
+		80D450C71E6B02B000154B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D450C51E6B02B000154B13 /* Main.storyboard */; };
+		80D450D21E6B02B000154B13 /* Project_AltisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450D11E6B02B000154B13 /* Project_AltisTests.swift */; };
+		80D450DD1E6B02B000154B13 /* Project_AltisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450DC1E6B02B000154B13 /* Project_AltisUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80D450CE1E6B02B000154B13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80D450B41E6B02B000154B13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80D450BB1E6B02B000154B13;
+			remoteInfo = "Project Altis";
+		};
+		80D450D91E6B02B000154B13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80D450B41E6B02B000154B13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80D450BB1E6B02B000154B13;
+			remoteInfo = "Project Altis";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80D450BC1E6B02B000154B13 /* Project Altis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Altis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D450BF1E6B02B000154B13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80D450C11E6B02B000154B13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80D450C31E6B02B000154B13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80D450C61E6B02B000154B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80D450C81E6B02B000154B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D450CD1E6B02B000154B13 /* Project AltisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AltisTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D450D11E6B02B000154B13 /* Project_AltisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AltisTests.swift; sourceTree = "<group>"; };
+		80D450D31E6B02B000154B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D450D81E6B02B000154B13 /* Project AltisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AltisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D450DC1E6B02B000154B13 /* Project_AltisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AltisUITests.swift; sourceTree = "<group>"; };
+		80D450DE1E6B02B000154B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80D450B91E6B02B000154B13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D450CA1E6B02B000154B13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D450D51E6B02B000154B13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80D450B31E6B02B000154B13 = {
+			isa = PBXGroup;
+			children = (
+				80D450BE1E6B02B000154B13 /* Project Altis */,
+				80D450D01E6B02B000154B13 /* Project AltisTests */,
+				80D450DB1E6B02B000154B13 /* Project AltisUITests */,
+				80D450BD1E6B02B000154B13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80D450BD1E6B02B000154B13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80D450BC1E6B02B000154B13 /* Project Altis.app */,
+				80D450CD1E6B02B000154B13 /* Project AltisTests.xctest */,
+				80D450D81E6B02B000154B13 /* Project AltisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80D450BE1E6B02B000154B13 /* Project Altis */ = {
+			isa = PBXGroup;
+			children = (
+				80D450BF1E6B02B000154B13 /* AppDelegate.swift */,
+				80D450C11E6B02B000154B13 /* ViewController.swift */,
+				80D450C31E6B02B000154B13 /* Assets.xcassets */,
+				80D450C51E6B02B000154B13 /* Main.storyboard */,
+				80D450C81E6B02B000154B13 /* Info.plist */,
+			);
+			path = "Project Altis";
+			sourceTree = "<group>";
+		};
+		80D450D01E6B02B000154B13 /* Project AltisTests */ = {
+			isa = PBXGroup;
+			children = (
+				80D450D11E6B02B000154B13 /* Project_AltisTests.swift */,
+				80D450D31E6B02B000154B13 /* Info.plist */,
+			);
+			path = "Project AltisTests";
+			sourceTree = "<group>";
+		};
+		80D450DB1E6B02B000154B13 /* Project AltisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80D450DC1E6B02B000154B13 /* Project_AltisUITests.swift */,
+				80D450DE1E6B02B000154B13 /* Info.plist */,
+			);
+			path = "Project AltisUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80D450BB1E6B02B000154B13 /* Project Altis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D450E11E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project Altis" */;
+			buildPhases = (
+				80D450B81E6B02B000154B13 /* Sources */,
+				80D450B91E6B02B000154B13 /* Frameworks */,
+				80D450BA1E6B02B000154B13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Project Altis";
+			productName = "Project Altis";
+			productReference = 80D450BC1E6B02B000154B13 /* Project Altis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80D450CC1E6B02B000154B13 /* Project AltisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D450E41E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project AltisTests" */;
+			buildPhases = (
+				80D450C91E6B02B000154B13 /* Sources */,
+				80D450CA1E6B02B000154B13 /* Frameworks */,
+				80D450CB1E6B02B000154B13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80D450CF1E6B02B000154B13 /* PBXTargetDependency */,
+			);
+			name = "Project AltisTests";
+			productName = "Project AltisTests";
+			productReference = 80D450CD1E6B02B000154B13 /* Project AltisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80D450D71E6B02B000154B13 /* Project AltisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80D450E71E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project AltisUITests" */;
+			buildPhases = (
+				80D450D41E6B02B000154B13 /* Sources */,
+				80D450D51E6B02B000154B13 /* Frameworks */,
+				80D450D61E6B02B000154B13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80D450DA1E6B02B000154B13 /* PBXTargetDependency */,
+			);
+			name = "Project AltisUITests";
+			productName = "Project AltisUITests";
+			productReference = 80D450D81E6B02B000154B13 /* Project AltisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80D450B41E6B02B000154B13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Judge2020;
+				TargetAttributes = {
+					80D450BB1E6B02B000154B13 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AHMQSX5S6N;
+						ProvisioningStyle = Automatic;
+					};
+					80D450CC1E6B02B000154B13 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AHMQSX5S6N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 80D450BB1E6B02B000154B13;
+					};
+					80D450D71E6B02B000154B13 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AHMQSX5S6N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 80D450BB1E6B02B000154B13;
+					};
+				};
+			};
+			buildConfigurationList = 80D450B71E6B02B000154B13 /* Build configuration list for PBXProject "Project Altis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80D450B31E6B02B000154B13;
+			productRefGroup = 80D450BD1E6B02B000154B13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80D450BB1E6B02B000154B13 /* Project Altis */,
+				80D450CC1E6B02B000154B13 /* Project AltisTests */,
+				80D450D71E6B02B000154B13 /* Project AltisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80D450BA1E6B02B000154B13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D450C41E6B02B000154B13 /* Assets.xcassets in Resources */,
+				80D450C71E6B02B000154B13 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D450CB1E6B02B000154B13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D450D61E6B02B000154B13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80D450B81E6B02B000154B13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D450C21E6B02B000154B13 /* ViewController.swift in Sources */,
+				80D450C01E6B02B000154B13 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D450C91E6B02B000154B13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D450D21E6B02B000154B13 /* Project_AltisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80D450D41E6B02B000154B13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80D450DD1E6B02B000154B13 /* Project_AltisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80D450CF1E6B02B000154B13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80D450BB1E6B02B000154B13 /* Project Altis */;
+			targetProxy = 80D450CE1E6B02B000154B13 /* PBXContainerItemProxy */;
+		};
+		80D450DA1E6B02B000154B13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80D450BB1E6B02B000154B13 /* Project Altis */;
+			targetProxy = 80D450D91E6B02B000154B13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80D450C51E6B02B000154B13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80D450C61E6B02B000154B13 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80D450DF1E6B02B000154B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80D450E01E6B02B000154B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		80D450E21E6B02B100154B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AHMQSX5S6N;
+				INFOPLIST_FILE = "Project Altis/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hunter.Project-Altis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		80D450E31E6B02B100154B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AHMQSX5S6N;
+				INFOPLIST_FILE = "Project Altis/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hunter.Project-Altis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		80D450E51E6B02B100154B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AHMQSX5S6N;
+				INFOPLIST_FILE = "Project AltisTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hunter.Project-AltisTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project Altis.app/Contents/MacOS/Project Altis";
+			};
+			name = Debug;
+		};
+		80D450E61E6B02B100154B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AHMQSX5S6N;
+				INFOPLIST_FILE = "Project AltisTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hunter.Project-AltisTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project Altis.app/Contents/MacOS/Project Altis";
+			};
+			name = Release;
+		};
+		80D450E81E6B02B100154B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AHMQSX5S6N;
+				INFOPLIST_FILE = "Project AltisUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hunter.Project-AltisUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Project Altis";
+			};
+			name = Debug;
+		};
+		80D450E91E6B02B100154B13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AHMQSX5S6N;
+				INFOPLIST_FILE = "Project AltisUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hunter.Project-AltisUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Project Altis";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80D450B71E6B02B000154B13 /* Build configuration list for PBXProject "Project Altis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D450DF1E6B02B000154B13 /* Debug */,
+				80D450E01E6B02B000154B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80D450E11E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project Altis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D450E21E6B02B100154B13 /* Debug */,
+				80D450E31E6B02B100154B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		80D450E41E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project AltisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D450E51E6B02B100154B13 /* Debug */,
+				80D450E61E6B02B100154B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		80D450E71E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project AltisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80D450E81E6B02B100154B13 /* Debug */,
+				80D450E91E6B02B100154B13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80D450B41E6B02B000154B13 /* Project object */;
+}
