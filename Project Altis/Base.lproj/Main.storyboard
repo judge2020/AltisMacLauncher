@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -122,6 +125,7 @@
                                 <menu key="submenu" title="Edit" id="W48-6f-4Dl">
                                     <items>
                                         <menuItem title="Undo" keyEquivalent="z" id="dRJ-4n-Yzg">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                             <connections>
                                                 <action selector="undo:" target="Ady-hI-5gd" id="M6e-cu-g7V"/>
                                             </connections>
@@ -138,17 +142,19 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Copy" keyEquivalent="c" id="x3v-GG-iWU">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                             <connections>
                                                 <action selector="copy:" target="Ady-hI-5gd" id="G1f-GL-Joy"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Paste" keyEquivalent="v" id="gVA-U4-sdL">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                             <connections>
                                                 <action selector="paste:" target="Ady-hI-5gd" id="UvS-8e-Qdg"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Paste and Match Style" keyEquivalent="V" id="WeT-3V-zwk">
-                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                        <menuItem title="Paste and Match Style" keyEquivalent="v" id="WeT-3V-zwk">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                             <connections>
                                                 <action selector="pasteAsPlainText:" target="Ady-hI-5gd" id="cEh-KX-wJQ"/>
                                             </connections>
@@ -160,6 +166,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Select All" keyEquivalent="a" id="Ruw-6m-B2m">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                             <connections>
                                                 <action selector="selectAll:" target="Ady-hI-5gd" id="VNm-Mi-diN"/>
                                             </connections>
@@ -653,20 +660,22 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Project_Altis" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="141" y="-94"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Project Altis" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="396" y="204" width="751" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="751" height="500"/>
+                        <value key="maxSize" type="size" width="751" height="500"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -676,18 +685,270 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Project Altis-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Project Altis" id="XfG-lQ-9wD" customClass="ViewController" customModule="Project_Altis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="751" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AN0-at-xzR">
+                                <rect key="frame" x="0.0" y="0.0" width="751" height="500"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="Brrrgh" id="pcP-BK-QfH"/>
+                            </imageView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weu-rE-ZY6">
+                                <rect key="frame" x="644" y="0.0" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="credits" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="mGi-tw-xSy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="CreditsPressed:" target="XfG-lQ-9wD" id="p2M-V0-awd"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-mg-5ah">
+                                <rect key="frame" x="523" y="0.0" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="options" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="jNy-gi-35N">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="OptionsPressed:" target="XfG-lQ-9wD" id="fRq-WP-xLd"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-EO-Gqg">
+                                <rect key="frame" x="272" y="0.0" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="group" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="tVM-rk-Ry2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="GroupTrackerPressed:" target="XfG-lQ-9wD" id="Dpf-u7-5Um"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLQ-yX-GQ6">
+                                <rect key="frame" x="617" y="220" width="94" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Save login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="HFW-jC-MNj">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHF-au-iAd">
+                                <rect key="frame" x="393" y="257" width="70" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username:" id="Sti-ff-ldF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phO-jb-02E">
+                                <rect key="frame" x="395" y="225" width="66" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password:" id="BfI-jp-JZw">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-mE-vRs">
+                                <rect key="frame" x="469" y="252" width="142" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="I1J-V7-R7L">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-st-yYg">
+                                <rect key="frame" x="469" y="222" width="142" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="GnB-nG-bEL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gb9-BP-TkI">
+                                <rect key="frame" x="619" y="239" width="90" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="play" imagePosition="only" alignment="center" alternateImage="play_h" imageScaling="proportionallyUpOrDown" inset="2" id="HwT-Ju-689">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="PlayPressed:" target="XfG-lQ-9wD" id="SqO-cm-8Id"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFJ-fv-sh9">
+                                <rect key="frame" x="20" y="0.0" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="website" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="d7F-Qc-F9P">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="WebsitePressed:" target="XfG-lQ-9wD" id="3kM-NV-qdg"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J4b-Tt-o8x">
+                                <rect key="frame" x="146" y="0.0" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="discord" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="s1f-V9-Den">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="DiscordPressed:" target="XfG-lQ-9wD" id="TPb-Xu-Zet"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0U-ud-gC9">
+                                <rect key="frame" x="397" y="0.0" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="theme" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="RO1-ym-5mW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ThemePressed:" target="XfG-lQ-9wD" id="Cfm-fa-0C5"/>
+                                    <segue destination="P8t-St-LWs" kind="popover" popoverAnchorView="Q0U-ud-gC9" popoverBehavior="t" preferredEdge="maxY" id="A1q-8D-o11"/>
+                                </connections>
+                            </button>
+                            <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XIz-8y-Zbe">
+                                <rect key="frame" x="37" y="57" width="313" height="382"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="pcP-BK-QfH" id="VEL-JT-5PU"/>
+                        <outlet property="PlayButton" destination="gb9-BP-TkI" id="hfi-yI-NQs"/>
+                        <outlet property="WebView" destination="XIz-8y-Zbe" id="bJt-VQ-xvO"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74.5" y="858"/>
+        </scene>
+        <!--Change Theme-->
+        <scene sceneID="2p5-4P-H1P">
+            <objects>
+                <viewController title="Change Theme" id="P8t-St-LWs" customClass="RadioController" customModule="Project_Altis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="hr1-XO-N6h">
+                        <rect key="frame" x="0.0" y="0.0" width="175" height="224"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1je-ti-b3L">
+                                <rect key="frame" x="2" y="187" width="170" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Toontown Central" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZRg-5m-AGB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="TTCPressed:" target="P8t-St-LWs" id="79v-BJ-Ou0"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWK-Jy-wWN">
+                                <rect key="frame" x="2" y="154" width="170" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Minnie's Melodyland" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6cc-Yd-jX5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="MMLPressed:" target="P8t-St-LWs" id="laC-qY-5FP"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGl-ZB-zji">
+                                <rect key="frame" x="2" y="121" width="170" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Donald's Dock" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K8U-T4-xKI">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="DDOCKPressed:" target="P8t-St-LWs" id="CHc-9H-x1L"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4O7-Fh-FAq">
+                                <rect key="frame" x="2" y="88" width="170" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Daisy Gardens" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a7z-yo-Gom">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="DGPressed:" target="P8t-St-LWs" id="efj-iP-kqx"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNC-Xl-gMA">
+                                <rect key="frame" x="2" y="55" width="170" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="The Brrrgh" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BMX-ZA-aB4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="BRRRGHPressed:" target="P8t-St-LWs" id="2FH-98-ciG"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qkh-gS-YM2">
+                                <rect key="frame" x="2" y="25" width="170" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Donald's Dreamland" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="91M-W1-z1j">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="DDLPressed:" target="P8t-St-LWs" id="3th-RL-CGH"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axL-31-hcR">
+                                <rect key="frame" x="27" y="7" width="121" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Random themes" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="us3-C7-WXj">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="RandomCheckboxClicked:" target="P8t-St-LWs" id="XMK-i9-rQW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="MMLPressed" destination="jWK-Jy-wWN" id="oLl-KO-wnn"/>
+                        <outlet property="RandomCheckbox" destination="axL-31-hcR" id="hGg-Fe-xH8"/>
+                    </connections>
+                </viewController>
+                <customObject id="ats-cn-ul2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="bol-iN-CKk"/>
+            </objects>
+            <point key="canvasLocation" x="-93" y="1399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Brrrgh" width="750.10467529296875" height="499.5697021484375"/>
+        <image name="credits" width="90" height="41"/>
+        <image name="discord" width="90" height="41"/>
+        <image name="group" width="90" height="41"/>
+        <image name="options" width="90" height="41"/>
+        <image name="play" width="90" height="41"/>
+        <image name="play_h" width="90" height="41"/>
+        <image name="theme" width="90" height="41"/>
+        <image name="website" width="90" height="41"/>
+    </resources>
 </document>

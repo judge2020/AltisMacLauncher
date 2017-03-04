@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80A60CCA1E6B5D06008C06A0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A60CC91E6B5D06008C06A0 /* WebKit.framework */; };
+		80A60CCD1E6B6B0D008C06A0 /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A60CCC1E6B6B0D008C06A0 /* LoginCheck.swift */; };
+		80A60CCF1E6B6B57008C06A0 /* DownloadFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A60CCE1E6B6B57008C06A0 /* DownloadFiles.swift */; };
 		80D450C01E6B02B000154B13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450BF1E6B02B000154B13 /* AppDelegate.swift */; };
 		80D450C21E6B02B000154B13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450C11E6B02B000154B13 /* ViewController.swift */; };
 		80D450C41E6B02B000154B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D450C31E6B02B000154B13 /* Assets.xcassets */; };
 		80D450C71E6B02B000154B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D450C51E6B02B000154B13 /* Main.storyboard */; };
 		80D450D21E6B02B000154B13 /* Project_AltisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450D11E6B02B000154B13 /* Project_AltisTests.swift */; };
 		80D450DD1E6B02B000154B13 /* Project_AltisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450DC1E6B02B000154B13 /* Project_AltisUITests.swift */; };
+		80D450EE1E6B1BD200154B13 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D450ED1E6B1BD200154B13 /* AppKit.framework */; };
+		80D450FB1E6B35A900154B13 /* BackgroundImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450F81E6B35A900154B13 /* BackgroundImages.swift */; };
+		80D450FC1E6B35A900154B13 /* Click.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450F91E6B35A900154B13 /* Click.swift */; };
+		80D450FD1E6B35A900154B13 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450FA1E6B35A900154B13 /* UrlHelper.swift */; };
+		80D450FF1E6B35FC00154B13 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450FE1E6B35FC00154B13 /* NotificationHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80A60CC91E6B5D06008C06A0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		80A60CCC1E6B6B0D008C06A0 /* LoginCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCheck.swift; sourceTree = "<group>"; };
+		80A60CCE1E6B6B57008C06A0 /* DownloadFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFiles.swift; sourceTree = "<group>"; };
 		80D450BC1E6B02B000154B13 /* Project Altis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Altis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D450BF1E6B02B000154B13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D450C11E6B02B000154B13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +56,11 @@
 		80D450D81E6B02B000154B13 /* Project AltisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AltisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D450DC1E6B02B000154B13 /* Project_AltisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AltisUITests.swift; sourceTree = "<group>"; };
 		80D450DE1E6B02B000154B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D450ED1E6B1BD200154B13 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		80D450F81E6B35A900154B13 /* BackgroundImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundImages.swift; path = Handlers/BackgroundImages.swift; sourceTree = "<group>"; };
+		80D450F91E6B35A900154B13 /* Click.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Click.swift; path = Handlers/Click.swift; sourceTree = "<group>"; };
+		80D450FA1E6B35A900154B13 /* UrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UrlHelper.swift; path = Handlers/UrlHelper.swift; sourceTree = "<group>"; };
+		80D450FE1E6B35FC00154B13 /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A60CCA1E6B5D06008C06A0 /* WebKit.framework in Frameworks */,
+				80D450EE1E6B1BD200154B13 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80A60CCB1E6B5F6D008C06A0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				80A60CCC1E6B6B0D008C06A0 /* LoginCheck.swift */,
+				80A60CCE1E6B6B57008C06A0 /* DownloadFiles.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		80D450B31E6B02B000154B13 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +106,7 @@
 				80D450D01E6B02B000154B13 /* Project AltisTests */,
 				80D450DB1E6B02B000154B13 /* Project AltisUITests */,
 				80D450BD1E6B02B000154B13 /* Products */,
+				80D450EC1E6B1BD100154B13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +123,8 @@
 		80D450BE1E6B02B000154B13 /* Project Altis */ = {
 			isa = PBXGroup;
 			children = (
+				80A60CCB1E6B5F6D008C06A0 /* Core */,
+				80D450F71E6B358C00154B13 /* Handlers */,
 				80D450BF1E6B02B000154B13 /* AppDelegate.swift */,
 				80D450C11E6B02B000154B13 /* ViewController.swift */,
 				80D450C31E6B02B000154B13 /* Assets.xcassets */,
@@ -120,6 +150,26 @@
 				80D450DE1E6B02B000154B13 /* Info.plist */,
 			);
 			path = "Project AltisUITests";
+			sourceTree = "<group>";
+		};
+		80D450EC1E6B1BD100154B13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80A60CC91E6B5D06008C06A0 /* WebKit.framework */,
+				80D450ED1E6B1BD200154B13 /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80D450F71E6B358C00154B13 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				80D450F81E6B35A900154B13 /* BackgroundImages.swift */,
+				80D450F91E6B35A900154B13 /* Click.swift */,
+				80D450FA1E6B35A900154B13 /* UrlHelper.swift */,
+				80D450FE1E6B35FC00154B13 /* NotificationHandler.swift */,
+			);
+			name = Handlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A60CCD1E6B6B0D008C06A0 /* LoginCheck.swift in Sources */,
+				80A60CCF1E6B6B57008C06A0 /* DownloadFiles.swift in Sources */,
+				80D450FC1E6B35A900154B13 /* Click.swift in Sources */,
+				80D450FF1E6B35FC00154B13 /* NotificationHandler.swift in Sources */,
+				80D450FD1E6B35A900154B13 /* UrlHelper.swift in Sources */,
 				80D450C21E6B02B000154B13 /* ViewController.swift in Sources */,
+				80D450FB1E6B35A900154B13 /* BackgroundImages.swift in Sources */,
 				80D450C01E6B02B000154B13 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +561,7 @@
 				80D450E31E6B02B100154B13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80D450E41E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project AltisTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +570,7 @@
 				80D450E61E6B02B100154B13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80D450E71E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project AltisUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +579,7 @@
 				80D450E91E6B02B100154B13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
