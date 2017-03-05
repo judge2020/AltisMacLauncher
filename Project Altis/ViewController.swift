@@ -16,6 +16,11 @@ class ViewController: NSViewController, WebPolicyDelegate {
     @IBOutlet var webView: WebView!
     //@IBOutlet var webView: WKWebView!
     @IBOutlet weak var BackgroundImage: NSImageCell!
+    @IBOutlet var DownloadProgress: NSProgressIndicator!
+    @IBOutlet var DownloadInfo: NSTextField!
+    @IBOutlet var LoginInfo: NSTextField!
+    @IBOutlet var UsernameField: NSTextField!
+    @IBOutlet var PasswordField: NSSecureTextField!
 
     let clickSound = ClickSoundHandler()
     let Backg = BackgroundImageHandler()
@@ -45,7 +50,9 @@ class ViewController: NSViewController, WebPolicyDelegate {
             listener.use()
         }
         else{
-            URL.OpenUrl(url: request.url!.absoluteString)
+            if (!URL.OpenUrl(url: request.url!.absoluteString)){
+                Notification.ShowNotification(title: "Failure.", details: "Unable to open URL.", view: self.view, clickSound: clickSound)
+            }
         }
     }
     

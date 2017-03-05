@@ -1,3 +1,4 @@
+
 //
 //  LoginCheck.swift
 //  Project Altis
@@ -10,9 +11,17 @@ import Foundation
 import AppKit
 import Cocoa
 import AVFoundation
+import Alamofire
+import SwiftyJSON
 
 class LoginCheck{
-    func VerifyLogin(username: String, password: String){
+    func VerifyLogin(username: String, password: String) -> (Bool, String){
         
+        //Alamofire.request("", method: HTTPMethod.post, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
+        
+        return (false, "An unknown error occured.")
     }
 }
+
+
+
