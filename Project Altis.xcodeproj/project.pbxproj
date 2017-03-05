@@ -21,6 +21,7 @@
 		80D450FC1E6B35A900154B13 /* Click.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450F91E6B35A900154B13 /* Click.swift */; };
 		80D450FD1E6B35A900154B13 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450FA1E6B35A900154B13 /* UrlHelper.swift */; };
 		80D450FF1E6B35FC00154B13 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D450FE1E6B35FC00154B13 /* NotificationHandler.swift */; };
+		EF4C9359D35189FCD9F16ED5 /* Pods_Project_Altis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EA9EE0133ECEBA905D2F74 /* Pods_Project_Altis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,9 @@
 		80D450F91E6B35A900154B13 /* Click.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Click.swift; path = Handlers/Click.swift; sourceTree = "<group>"; };
 		80D450FA1E6B35A900154B13 /* UrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UrlHelper.swift; path = Handlers/UrlHelper.swift; sourceTree = "<group>"; };
 		80D450FE1E6B35FC00154B13 /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		83AFFA4D9D847A72FAA2E578 /* Pods-Project Altis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Altis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project Altis/Pods-Project Altis.debug.xcconfig"; sourceTree = "<group>"; };
+		85BD3FE15D6DC3822730E7E9 /* Pods-Project Altis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Altis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project Altis/Pods-Project Altis.release.xcconfig"; sourceTree = "<group>"; };
+		A5EA9EE0133ECEBA905D2F74 /* Pods_Project_Altis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Altis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			files = (
 				80A60CCA1E6B5D06008C06A0 /* WebKit.framework in Frameworks */,
 				80D450EE1E6B1BD200154B13 /* AppKit.framework in Frameworks */,
+				EF4C9359D35189FCD9F16ED5 /* Pods_Project_Altis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +112,7 @@
 				80D450DB1E6B02B000154B13 /* Project AltisUITests */,
 				80D450BD1E6B02B000154B13 /* Products */,
 				80D450EC1E6B1BD100154B13 /* Frameworks */,
+				BE166D834A6FB17C7A645E97 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +163,7 @@
 			children = (
 				80A60CC91E6B5D06008C06A0 /* WebKit.framework */,
 				80D450ED1E6B1BD200154B13 /* AppKit.framework */,
+				A5EA9EE0133ECEBA905D2F74 /* Pods_Project_Altis.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,6 +179,15 @@
 			name = Handlers;
 			sourceTree = "<group>";
 		};
+		BE166D834A6FB17C7A645E97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83AFFA4D9D847A72FAA2E578 /* Pods-Project Altis.debug.xcconfig */,
+				85BD3FE15D6DC3822730E7E9 /* Pods-Project Altis.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80D450E11E6B02B100154B13 /* Build configuration list for PBXNativeTarget "Project Altis" */;
 			buildPhases = (
+				08BB42F1F2E066C26A179633 /* [CP] Check Pods Manifest.lock */,
 				80D450B81E6B02B000154B13 /* Sources */,
 				80D450B91E6B02B000154B13 /* Frameworks */,
 				80D450BA1E6B02B000154B13 /* Resources */,
+				82A1A4818AC7A9DE1950356E /* [CP] Embed Pods Frameworks */,
+				470A380FFF3A033D1DD0707A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,6 +321,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08BB42F1F2E066C26A179633 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		470A380FFF3A033D1DD0707A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project Altis/Pods-Project Altis-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82A1A4818AC7A9DE1950356E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project Altis/Pods-Project Altis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		80D450B81E6B02B000154B13 /* Sources */ = {
@@ -454,6 +521,7 @@
 		};
 		80D450E21E6B02B100154B13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83AFFA4D9D847A72FAA2E578 /* Pods-Project Altis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -468,6 +536,7 @@
 		};
 		80D450E31E6B02B100154B13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85BD3FE15D6DC3822730E7E9 /* Pods-Project Altis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
