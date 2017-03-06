@@ -29,7 +29,7 @@ class ViewController: NSViewController, WebPolicyDelegate {
     let URL = UrlHelperHandler()
     let Notification = NotificationHandler()
     let Login = LoginCheck()
-    
+    let DownloadFls = FileDownloader()
     
     //
     //
@@ -38,7 +38,6 @@ class ViewController: NSViewController, WebPolicyDelegate {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let this = UserDefaults.standard.integer(forKey: "RandBox")
         if (this == 1){
