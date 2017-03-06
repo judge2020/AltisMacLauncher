@@ -115,6 +115,7 @@ class FileDownloader{
             }
         }
         Queue.waitUntilAllOperationsAreFinished()
+        info.stringValue = "Have fun!"
         TTLauncher.LaunchTT(username: username, password: password)
     }
     

@@ -738,6 +738,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="CheckBoxSaveChange:" target="XfG-lQ-9wD" id="oN4-He-Nb8"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHF-au-iAd">
                                 <rect key="frame" x="551" y="333" width="69" height="18"/>
@@ -760,11 +763,14 @@
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-mE-vRs">
                                 <rect key="frame" x="622" y="332" width="201" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="I1J-V7-R7L">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="I1J-V7-R7L">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="UsernameFieldChanged:" target="XfG-lQ-9wD" id="Hzm-6d-IIQ"/>
+                                </connections>
                             </textField>
                             <secureTextField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpY-st-yYg">
                                 <rect key="frame" x="622" y="306" width="201" height="20"/>
@@ -864,6 +870,7 @@
                         <outlet property="LoginInfo" destination="10o-c4-Il0" id="Jia-qZ-dLH"/>
                         <outlet property="PasswordField" destination="qpY-st-yYg" id="a5Y-EK-3jz"/>
                         <outlet property="PlayButton" destination="gb9-BP-TkI" id="hfi-yI-NQs"/>
+                        <outlet property="SaveLoginBox" destination="HLQ-yX-GQ6" id="VTk-aR-m9S"/>
                         <outlet property="UsernameField" destination="veZ-mE-vRs" id="xZq-ge-Z6S"/>
                         <outlet property="WebView" destination="XIz-8y-Zbe" id="bJt-VQ-xvO"/>
                     </connections>
