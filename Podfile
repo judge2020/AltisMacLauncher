@@ -1,3 +1,4 @@
+source 'https://github.com/CocoaPods/Specs.git'
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
@@ -7,5 +8,6 @@ target 'Project Altis' do
   pod 'Alamofire', '~> 4.3'
   pod 'SwiftyJSON'
   pod 'CryptoSwift'
+  pod 'XCGLogger', '~> 4.0.0'
 
 end

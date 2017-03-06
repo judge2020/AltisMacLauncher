@@ -39,6 +39,15 @@ class ViewController: NSViewController, WebPolicyDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //if user has save login enabled
+        let saveLogin = UserDefaults.standard.integer(forKey: "savelogin")
+        let Login = UserDefaults.standard.string(forKey: "login")
+        
+        if (saveLogin == 1){
+            UsernameField.stringValue = Login
+        }
+        
+        
         let this = UserDefaults.standard.integer(forKey: "RandBox")
         if (this == 1){
             //rand backgrounds
@@ -92,8 +101,13 @@ class ViewController: NSViewController, WebPolicyDelegate {
         //rtn.1 = string info.
         //Probably not the best to house too much stuff in completion handler but oh well.
         Login.VerifyLogin(username: UsernameField.stringValue, password: PasswordField.stringValue, Completion: {rtn in
-            print(rtn.0)
             self.LoginInfo.stringValue = rtn.1
+            
+            if (rtn.0 == true){
+                self.DownloadFls.createMissingDirs()
+                //self
+                self.DownloadFls.DownloadFilesAndPlayTEWTEW(progress: self.DownloadProgress, info: self.DownloadInfo, username: self.UsernameField.stringValue, password: self.PasswordField.stringValue)
+            }
         })
         
         

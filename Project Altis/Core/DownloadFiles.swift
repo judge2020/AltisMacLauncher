@@ -14,11 +14,13 @@ import CryptoSwift
 import Alamofire
 import SwiftyJSON
 
+
 class FileDownloader{
     //currently app support/Altis
     //can be changed.
     var dataPath = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("Altis")
     
+    let TTLauncher = Launcher()
     //
     //
     //create missing directories. Will need ot be updated for whatever dirs we need
@@ -41,16 +43,29 @@ class FileDownloader{
     //
     //
     func DownloadFilesAndPlayTEWTEW(progress: NSProgressIndicator, info: NSTextField, username: String, password: String){
+        
+        //initialize queue
+        let Queue = OperationQueue()
+        
+        //maximum download limit
+        Queue.maxConcurrentOperationCount = 1
+        
+        //main request
         Alamofire.request("https://projectaltis.com/api/manifest").responseString{response in
             let raw = response.result.value! as String
+            
+            //separate each file object
             let array = raw.components(separatedBy: "#")
             
             //handle update
             for root in array{
                 let json = JSON(data: root.data(using: .utf8)!)
+                
+                //filename
                 var filename = json["filename"].stringValue
                 if (filename.isEmpty) {return}
                 
+                // ~= is regex match
                 if (filename =~ "phase_.+\\.mf"){
                     filename = "resources/default/" + filename
                 }
@@ -59,43 +74,48 @@ class FileDownloader{
                 }
                 
                 let filepath = (self.dataPath.appendingPathComponent(filename))
+                
+                //check if file exists
                 if (!FileManager.default.fileExists(atPath: filepath.path)){
                     print("Missing: " + filename)
-                    DispatchQueue.global(qos: .default).async {
-                        self.downloadAlamo(path: filepath, url: json["url"].stringValue)
-                    }
+                    let op = DownloadOperation(URLString: json["url"].stringValue, info: info, progress: progress, filename: filename, filePath: filepath, networkOperationCompletionHandler: { responseObject, error in
+                        if responseObject == nil {
+                            
+                            print("failed: \(error)")
+                        } else {
+                            // update UI to reflect the `responseObject` finished successfully
+                            
+                            print("responseObject=\(responseObject!)")
+                        }
+                        
+                    })
+                    Queue.addOperation(op)
                 }
                 else{
                     print("Found: " + filename)
-                    
-                    //filesize checking for updates
-                    let filesize = (try? FileManager.default.attributesOfItem(atPath: filepath.path) as NSDictionary)?.fileSize()
-                    if (String(describing: filesize!) != json["size"].string){
-                        print("Filesize mismatch, redownloading: " + filename)
-                        DispatchQueue.global(qos: .default).async {
-                            try? FileManager.default.removeItem(at: filepath)
-                            self.downloadAlamo(path: filepath, url: json["url"].stringValue)
-                        }
+                    //if not, check if SHA's are equal
+                    if (!self.CompareSha(filePath: filepath.path, hash: json["sha256"].stringValue)){
+                        print("SHA256 mismatch for: " + filename)
+                        try? FileManager.default.removeItem(at: filepath)
+                        let op = DownloadOperation(URLString: json["url"].stringValue, info: info, progress: progress, filename: filename, filePath: filepath, networkOperationCompletionHandler: { responseObject, error in
+                            if responseObject == nil {
+                                
+                                print("failed: \(error)")
+                            } else {
+                                // update UI to reflect the `responseObject` finished successfully
+                                
+                                print("responseObject=\(responseObject!)")
+                            }
+                            
+                        })
+                        Queue.addOperation(op)
                     }
                     
                 }
             }
         }
-    }
-    func downloadAlamo(path: URL, url: String){
-        //let destination = DownloadRequest.suggestedDownloadDestination(for: .applicationSupportDirectory)
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = path
-            
-            return (documentsURL, [.removePreviousFile])
-        }
-        Alamofire.download(
-            url,
-            method: .get,
-            to: destination).downloadProgress(closure: { (progress) in
-                //progress closure
-            }).response(completionHandler: { (DefaultDownloadResponse) in
-            })
+        Queue.waitUntilAllOperationsAreFinished()
+        TTLauncher.LaunchTT(username: username, password: password)
     }
     
     func CompareSha(filePath: String, hash: String) -> Bool{
@@ -113,6 +133,49 @@ class FileDownloader{
             _ = CC_SHA256($0, CC_LONG(data.count), &hash)
         }
         return Data(bytes: hash)
+    }
+}
+//i know we're passing this progress field around so much. it's very abused.
+class DownloadOperation: Operation{
+    let URLString: String
+    let info: NSTextField
+    let progress: NSProgressIndicator
+    let filename: String
+    let filePath: URL
+    let networkOperationCompletionHandler: (_ responseObject: Any?, _ error: Error?) -> ()
+    
+    init(URLString: String, info: NSTextField, progress: NSProgressIndicator, filename: String, filePath: URL, networkOperationCompletionHandler: @escaping (_ responseObject: Any?, _ error: Error?) -> ()) {
+        self.URLString = URLString
+        self.info = info
+        self.progress = progress
+        self.filename = filename
+        self.filePath = filePath
+        self.networkOperationCompletionHandler = networkOperationCompletionHandler
+        super.init()
+    }
+    
+    
+    // when the operation actually starts, this is the method that will be called
+    
+    override func main() {
+        self.info.stringValue = "Downloading: " + self.filename
+        self.info.isEnabled = true
+        self.info.isHidden = false
+        self.progress.isHidden = false
+        self.info.placeholderString = "Downloading: " + self.filename
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let documentsURL = self.filePath
+            
+            return (documentsURL, [.removePreviousFile])
+        }
+        Alamofire.download(
+            URLString,
+            method: .get,
+            to: destination).downloadProgress(closure: { (Alamoprogress) in
+                self.info.stringValue = "Downloading: " + self.filename
+                self.progress.doubleValue = Alamoprogress.fractionCompleted * 100
+            }).response(completionHandler: { (DefaultDownloadResponse) in
+            })
     }
 }
 
