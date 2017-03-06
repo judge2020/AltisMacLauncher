@@ -11,6 +11,8 @@ import AppKit
 import Cocoa
 import AVFoundation
 import CryptoSwift
+import Alamofire
+import SwiftyJSON
 
 class FileDownloader{
     //currently app support/Altis
@@ -38,8 +40,62 @@ class FileDownloader{
     //download files and compare sha's.
     //
     //
-    func DownloadFiles(progress: NSProgressIndicator, info: NSTextField){
-        
+    func DownloadFilesAndPlayTEWTEW(progress: NSProgressIndicator, info: NSTextField, username: String, password: String){
+        Alamofire.request("https://projectaltis.com/api/manifest").responseString{response in
+            let raw = response.result.value! as String
+            let array = raw.components(separatedBy: "#")
+            
+            //handle update
+            for root in array{
+                let json = JSON(data: root.data(using: .utf8)!)
+                var filename = json["filename"].stringValue
+                if (filename.isEmpty) {return}
+                
+                if (filename =~ "phase_.+\\.mf"){
+                    filename = "resources/default/" + filename
+                }
+                if (filename == "toon.dc"){
+                    filename = "config/" + filename
+                }
+                
+                let filepath = (self.dataPath.appendingPathComponent(filename))
+                if (!FileManager.default.fileExists(atPath: filepath.path)){
+                    print("Missing: " + filename)
+                    DispatchQueue.global(qos: .default).async {
+                        self.downloadAlamo(path: filepath, url: json["url"].stringValue)
+                    }
+                }
+                else{
+                    print("Found: " + filename)
+                    
+                    //filesize checking for updates
+                    let filesize = (try? FileManager.default.attributesOfItem(atPath: filepath.path) as NSDictionary)?.fileSize()
+                    if (String(describing: filesize!) != json["size"].string){
+                        print("Filesize mismatch, redownloading: " + filename)
+                        DispatchQueue.global(qos: .default).async {
+                            try? FileManager.default.removeItem(at: filepath)
+                            self.downloadAlamo(path: filepath, url: json["url"].stringValue)
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    func downloadAlamo(path: URL, url: String){
+        //let destination = DownloadRequest.suggestedDownloadDestination(for: .applicationSupportDirectory)
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let documentsURL = path
+            
+            return (documentsURL, [.removePreviousFile])
+        }
+        Alamofire.download(
+            url,
+            method: .get,
+            to: destination).downloadProgress(closure: { (progress) in
+                //progress closure
+            }).response(completionHandler: { (DefaultDownloadResponse) in
+            })
     }
     
     func CompareSha(filePath: String, hash: String) -> Bool{
@@ -58,4 +114,24 @@ class FileDownloader{
         }
         return Data(bytes: hash)
     }
+}
+
+class Regex {
+    let internalExpression: NSRegularExpression
+    let pattern: String
+    
+    init(_ pattern: String) {
+        self.pattern = pattern
+        self.internalExpression = try! NSRegularExpression(pattern: pattern, options: [])
+    }
+    
+    func test(input: String) -> Bool {
+        let matches = self.internalExpression.matches(in: input, options: [], range:NSRange(location: 0, length: input.characters.count))
+        return matches.count > 0
+    }
+}
+
+infix operator =~
+func =~ (input: String, pattern: String) -> Bool {
+    return Regex(pattern).test(input: input)
 }
