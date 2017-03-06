@@ -12,6 +12,11 @@ import Cocoa
 import AVFoundation
 
 class NotificationHandler{
+    //
+    //
+    //Notification, attached to window
+    //
+    //
     func ShowNotification(title: String, details: String, view: NSView, clickSound: ClickSoundHandler){
         let alert = NSAlert()
         alert.messageText = title
@@ -24,6 +29,11 @@ class NotificationHandler{
             }
         })
     }
+    //
+    //
+    //Notification, free floating
+    //
+    //
     func ShowNotification(title: String, details: String){
         let alert = NSAlert()
         alert.messageText = title

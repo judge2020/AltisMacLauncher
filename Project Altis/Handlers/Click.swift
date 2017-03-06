@@ -13,6 +13,11 @@ import AVFoundation
 
 class ClickSoundHandler{
     var player: AVAudioPlayer?
+    //
+    //
+    //Play click sound on buttons
+    //
+    //
     func playSound(){
         // Set the sound file name & extension
         let asset = NSDataAsset(name: "sndclick")

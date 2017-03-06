@@ -16,6 +16,12 @@ class BackgroundImageHandler {
         ImageView.image = image
     }
     
+    
+    //
+    //
+    //Random background setting.
+    //
+    //
     func SetRandomBackground(ImageView: NSImageCell){
         let k = Int.random(lower: 1, upper: 6)
         switch k{
@@ -42,6 +48,11 @@ class BackgroundImageHandler {
             break
         }
     }
+    //
+    //
+    //Called when a user does not have random backgrounds. Loads the selected BG based off user settings.
+    //
+    //
     func SetStartup(ImageView: NSImageCell){
         switch(UserDefaults.standard.integer(forKey: "pg")){
         case 1:

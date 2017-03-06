@@ -15,13 +15,48 @@ import Alamofire
 import SwiftyJSON
 
 class LoginCheck{
-    func VerifyLogin(username: String, password: String) -> (Bool, String){
+    
+    //
+    //
+    //Verify logins with server before trying to download or start game. technically not needed.
+    //
+    //
+    func VerifyLogin(username: String, password: String, Completion: @escaping (Bool, String) -> ()){
         
-        //Alamofire.request("", method: HTTPMethod.post, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
+        //params
+        let paramaters: Parameters = [
+            "u": username,
+            "p": password
+        ]
         
-        return (false, "An unknown error occured.")
+        //defaults.
+        var returnBool = false
+        var returnString = "An unknown errors has occured."
+        
+        //Request function.
+        Alamofire.request("https://projectaltis.com/api/login", method: .post, parameters: paramaters).responseString{response in
+            let raw = response.result.value! as String
+            print(raw)
+            let json = JSON(data: raw.data(using: .utf8)!)
+            returnBool = String(describing: json["status"]).toBool()!
+            returnString = String(describing: json["reason"])
+            Completion(returnBool, returnString)
+            return
+        }
+        //Completion(returnBool, returnString) //May be needed when auth is down.
     }
 }
 
-
- 
+//convert returned str to bool, i think
+extension String {
+    func toBool() -> Bool? {
+        switch self {
+        case "True", "true", "yes", "1":
+            return true
+        case "False", "false", "no", "0":
+            return false
+        default:
+            return nil
+        }
+    }
+}

@@ -12,6 +12,11 @@ import Cocoa
 import AVFoundation
 
 class UrlHelperHandler {
+    //
+    //
+    //open URL
+    //
+    //
     func OpenUrl(url: String) -> Bool{
         if let url = URL(string: url), NSWorkspace.shared().open(url) {
             print("Opened URL: ", url)
