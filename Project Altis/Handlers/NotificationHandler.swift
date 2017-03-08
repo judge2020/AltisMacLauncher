@@ -23,7 +23,7 @@ class NotificationHandler{
         alert.addButton(withTitle: "Ok")
         alert.informativeText = details
         
-        alert.beginSheetModal(for: view.window!, completionHandler: { [unowned self] (returnCode) -> Void in
+        alert.beginSheetModal(for: view.window!, completionHandler: {(returnCode) -> Void in
             if returnCode == NSAlertFirstButtonReturn {
                 clickSound.playSound()
             }
