@@ -3,11 +3,11 @@ Project Altis launcher for mac - looks like Win.
 
 https://youtu.be/QQXQnsGaqAc
 
-## Programming with swift as compared to C#
+## Programming with swift as compared to `C#`
 
 There are some similarities and some differences between C# and swift. A good reference point is [here](https://developer.ibm.com/swift/2016/02/25/swift-for-c-developers/). The main similarities are that they're both based on java, meaning syntax is widely similar.
 
-The differences and compared to C#:
+The differences and compared to `C#`:
 
 * In C# you **have** to semicolon; in swift it's discouraged to do this but won't break code.
 * in swift a non-changing variable is set with `let`, like a C# `const`
