@@ -42,23 +42,43 @@ class FileDownloader{
     //download files and compare sha's.
     //
     //
+    
+    var done = 0
+    var needed = 0
+    var noDLNeeded = false
+    
     func DownloadFilesAndPlayTEWTEW(progress: NSProgressIndicator, info: NSTextField, username: String, password: String){
         
         //initialize queue
-        let Queue = OperationQueue()
-        
-        //maximum download limit
-        Queue.maxConcurrentOperationCount = 1
-        
         //main request
+        
+        let queue = DispatchQueue(label: "q")
+        let semaphore = DispatchSemaphore(value: 1)
+        
+        
         Alamofire.request("https://projectaltis.com/api/manifest").responseString{response in
+            
+            
+            
             let raw = response.result.value! as String
+            
+            
             
             //separate each file object
             let array = raw.components(separatedBy: "#")
             
+            
             //handle update
             for root in array{
+                
+                //if end of loop, check if there isn't a Download needed. Requires an trailing #pound to reliably work
+                if (root == "" && self.needed == 0){
+                    info.stringValue = "Have fun!"
+                    print("Launching toontown")
+                    self.TTLauncher.LaunchTT(username: username, password: password)
+                }
+                
+                
                 let json = JSON(data: root.data(using: .utf8)!)
                 
                 //filename
@@ -78,18 +98,43 @@ class FileDownloader{
                 //check if file exists
                 if (!FileManager.default.fileExists(atPath: filepath.path)){
                     print("Missing: " + filename)
-                    let op = DownloadOperation(URLString: json["url"].stringValue, info: info, progress: progress, filename: filename, filePath: filepath, networkOperationCompletionHandler: { responseObject, error in
-                        if responseObject == nil {
-                            
-                            print("failed: \(error)")
-                        } else {
-                            // update UI to reflect the `responseObject` finished successfully
-                            
-                            print("responseObject=\(responseObject!)")
-                        }
+                    
+                    //download code
+                    self.needed += 1
+                    
+                    queue.async {
+                        semaphore.wait()
                         
-                    })
-                    Queue.addOperation(op)
+                        print("Started downloading " + filename)
+                        info.stringValue = "Downloading: " + filename
+                        info.placeholderString = "Downloading: " + filename
+                        info.isEnabled = true
+                        info.isHidden = false
+                        progress.isHidden = false
+                        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                            let documentsURL = filepath
+                            return (documentsURL, [.removePreviousFile])
+                        }
+                        Alamofire.download( json["url"].stringValue, method: .get, to: destination)
+                            .downloadProgress{ Alamoprogress in
+                                info.stringValue = "Downloading: " + filename
+                                info.placeholderString = "Downloading: " + filename
+                                progress.doubleValue = Alamoprogress.fractionCompleted * 100
+                            }
+                            .response { response in
+                                semaphore.signal()
+                                print("Done downloading: " + filename)
+                                self.done += 1
+                                self.CheckDownloadsDone(info: info, username: username, password: password)
+                                
+                        }
+                    }
+                    
+
+                    
+                    
+                    
+                    //end dl code
                 }
                 else{
                     print("Found: " + filename)
@@ -97,26 +142,69 @@ class FileDownloader{
                     if (!self.CompareSha(filePath: filepath.path, hash: json["sha256"].stringValue)){
                         print("SHA256 mismatch for: " + filename)
                         try? FileManager.default.removeItem(at: filepath)
-                        let op = DownloadOperation(URLString: json["url"].stringValue, info: info, progress: progress, filename: filename, filePath: filepath, networkOperationCompletionHandler: { responseObject, error in
-                            if responseObject == nil {
-                                
-                                print("failed: \(error)")
-                            } else {
-                                // update UI to reflect the `responseObject` finished successfully
-                                
-                                print("responseObject=\(responseObject!)")
-                            }
+                        
+                        
+                        //download code
+                        
+                        self.needed += 1
+                        
+                        queue.async {
+                            semaphore.wait()
                             
-                        })
-                        Queue.addOperation(op)
+                            print("Started downloading " + filename)
+                            info.stringValue = "Downloading: " + filename
+                            info.placeholderString = "Downloading: " + filename
+                            info.isEnabled = true
+                            info.isHidden = false
+                            progress.isHidden = false
+                            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                                let documentsURL = filepath
+                                return (documentsURL, [.removePreviousFile])
+                            }
+                            Alamofire.download( json["url"].stringValue, method: .get, to: destination)
+                                .downloadProgress{ Alamoprogress in
+                                    info.stringValue = "Downloading: " + filename
+                                    progress.doubleValue = Alamoprogress.fractionCompleted * 100
+                                }
+                                .response { response in
+                                    
+                                    
+                                    print("Done downloading: " + filename)
+                                    
+                                    self.done += 1
+                                    semaphore.signal()
+                                    self.CheckDownloadsDone(info: info, username: username, password: password)
+                                    
+                            }
+                        }
+                        
+                        
+                        
+                        
+                        
+                        //end dl code
+                        
+                    }
+                    else{
+                        print("SHA match for: " + filename)
                     }
                     
                 }
+                
             }
+            
         }
-        Queue.waitUntilAllOperationsAreFinished()
-        info.stringValue = "Have fun!"
-        TTLauncher.LaunchTT(username: username, password: password)
+        
+        info.stringValue = "Verifying files..."
+
+    }
+    
+    func CheckDownloadsDone(info: NSTextField, username: String, password: String){
+        if (self.done != 0 && self.needed != 0 && self.needed == self.done){
+            info.stringValue = "Have fun!"
+            print("Launching toontown")
+            self.TTLauncher.LaunchTT(username: username, password: password)
+        }
     }
     
     func CompareSha(filePath: String, hash: String) -> Bool{
@@ -136,50 +224,9 @@ class FileDownloader{
         return Data(bytes: hash)
     }
 }
-//i know we're passing this progress field around so much. it's very abused.
-class DownloadOperation: Operation{
-    let URLString: String
-    let info: NSTextField
-    let progress: NSProgressIndicator
-    let filename: String
-    let filePath: URL
-    let networkOperationCompletionHandler: (_ responseObject: Any?, _ error: Error?) -> ()
-    
-    init(URLString: String, info: NSTextField, progress: NSProgressIndicator, filename: String, filePath: URL, networkOperationCompletionHandler: @escaping (_ responseObject: Any?, _ error: Error?) -> ()) {
-        self.URLString = URLString
-        self.info = info
-        self.progress = progress
-        self.filename = filename
-        self.filePath = filePath
-        self.networkOperationCompletionHandler = networkOperationCompletionHandler
-        super.init()
-    }
-    
-    
-    // when the operation actually starts, this is the method that will be called
-    
-    override func main() {
-        self.info.stringValue = "Downloading: " + self.filename
-        self.info.isEnabled = true
-        self.info.isHidden = false
-        self.progress.isHidden = false
-        self.info.placeholderString = "Downloading: " + self.filename
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = self.filePath
-            
-            return (documentsURL, [.removePreviousFile])
-        }
-        Alamofire.download(
-            URLString,
-            method: .get,
-            to: destination).downloadProgress(closure: { (Alamoprogress) in
-                self.info.stringValue = "Downloading: " + self.filename
-                self.progress.doubleValue = Alamoprogress.fractionCompleted * 100
-            }).response(completionHandler: { (DefaultDownloadResponse) in
-            })
-    }
-}
 
+
+//regex easy handler
 class Regex {
     let internalExpression: NSRegularExpression
     let pattern: String
