@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="12118"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -682,6 +682,7 @@
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="7xn-Qf-VR6" customClass="SUUpdater"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
@@ -718,6 +719,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="OptionsPressed:" target="XfG-lQ-9wD" id="fRq-WP-xLd"/>
+                                    <segue destination="OJu-MX-UCI" kind="popover" popoverAnchorView="ZUq-mg-5ah" popoverBehavior="t" preferredEdge="maxY" id="eHN-fO-gMB"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-EO-Gqg">
@@ -734,7 +736,7 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLQ-yX-GQ6">
                                 <rect key="frame" x="829" y="297" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Save login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="HFW-jC-MNj">
+                                <buttonCell key="cell" type="check" title="Save User" bezelStyle="regularSquare" imagePosition="left" inset="2" id="HFW-jC-MNj">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -882,7 +884,7 @@
         <!--Change Theme-->
         <scene sceneID="2p5-4P-H1P">
             <objects>
-                <viewController title="Change Theme" id="P8t-St-LWs" customClass="RadioController" customModule="Project_Altis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Change Theme" id="P8t-St-LWs" customClass="ThemeController" customModule="Project_Altis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="hr1-XO-N6h">
                         <rect key="frame" x="0.0" y="0.0" width="175" height="224"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -974,7 +976,50 @@
                 <customObject id="ats-cn-ul2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="bol-iN-CKk"/>
             </objects>
-            <point key="canvasLocation" x="-199" y="1477"/>
+            <point key="canvasLocation" x="98" y="1490"/>
+        </scene>
+        <!--Options-->
+        <scene sceneID="Iym-C1-Zm1">
+            <objects>
+                <viewController title="Change Theme" id="OJu-MX-UCI" userLabel="Options" customClass="OptionsController" customModule="Project_Altis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="E5L-ns-3ex">
+                        <rect key="frame" x="0.0" y="0.0" width="225" height="224"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3Q-8l-7gf">
+                                <rect key="frame" x="18" y="181" width="151" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Secure with Touch ID" bezelStyle="regularSquare" imagePosition="left" inset="2" id="71S-kx-gcT">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="TouchidPressed:" target="OJu-MX-UCI" id="qUo-WI-MfG"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-87-fnp">
+                                <rect key="frame" x="18" y="201" width="189" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Store password in Keychain" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wMI-JA-ntn">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="KeychainPressed:" target="OJu-MX-UCI" id="Upa-k7-wDd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="Keychainbox" destination="dbi-87-fnp" id="lZn-uz-Aii"/>
+                        <outlet property="Touchidbox" destination="r3Q-8l-7gf" id="pYf-xy-f8k"/>
+                    </connections>
+                </viewController>
+                <customObject id="kZf-57-fRR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="zKu-2m-ISg"/>
+                <userDefaultsController id="jES-B3-17w"/>
+            </objects>
+            <point key="canvasLocation" x="322.5" y="1490"/>
         </scene>
     </scenes>
     <resources>

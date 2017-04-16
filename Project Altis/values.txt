@@ -1,0 +1,13 @@
+## user defaults
+
+these are insecure variables that don't need any Mac permissions to access.
+
+tbd - list
+
+## keychain values
+
+these are secure values that protect data and require user login/interaction
+
+NOTE: they are all prefixed with "altis-"
+
+SecurePassword

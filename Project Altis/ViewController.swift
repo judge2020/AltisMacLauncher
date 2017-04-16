@@ -74,6 +74,22 @@ class ViewController: NSViewController, WebPolicyDelegate {
         let nsurlreq = NSURLRequest(url: url! as URL)
         webView.mainFrame.load(nsurlreq as URLRequest)
         webView.policyDelegate = self
+        
+        //touchid if the user enables it
+        if(UserDefaults.standard.bool(forKey: "Touchid") && UserDefaults.standard.bool(forKey: "Keychain")){
+            KeychainHandler.Instance.authenticateUser(reason: "autofill your Project Altis password", success: {
+                //fill passwrd field
+                if(KeychainSwift.Instance.get("SecurePassword") != nil){
+                    self.PasswordField.stringValue = KeychainSwift.Instance.get("SecurePassword")!
+                    }
+                return
+            }, failure: {_ in
+                return
+            })
+        }
+        else if (!UserDefaults.standard.bool(forKey: "Touchid") && UserDefaults.standard.bool(forKey: "Keychain")){
+            self.PasswordField.stringValue = KeychainSwift.Instance.get("SecurePassword")!
+        }
     }
     
     //redirect anything that's not the launcher page
@@ -105,6 +121,10 @@ class ViewController: NSViewController, WebPolicyDelegate {
         if (UsernameField.stringValue.isEmpty || PasswordField.stringValue.isEmpty){
             Notification.ShowNotification(title: "Invalid Username and password.", details: "Please fill in both fields.", view: self.view, clickSound: clickSound)
             return
+        }
+        
+        if(UserDefaults.standard.bool(forKey: "Keychain")){
+            KeychainHandler.Instance.SavePasswordKeychain(password: PasswordField.stringValue)
         }
         
         //login response
@@ -207,79 +227,5 @@ class ViewController: NSViewController, WebPolicyDelegate {
     }
 
 }
-//RadioController is the placeholder name.
-//for the themes menu
-class RadioController: NSViewController {
-    @IBOutlet weak var RandomCheckbox: NSButton!
-    
-    var vc = ViewController()
-    var nc = NotificationHandler()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let this = UserDefaults.standard.integer(forKey: "RandBox")
-        if (this == 1){
-            RandomCheckbox.state = NSOnState
-        }
-        else {
-            RandomCheckbox.state = NSOffState
-        }
-    }
-    @IBAction func RandomCheckboxClicked(_ sender: Any) {
-        print("TRRIGGERED")
-        if (RandomCheckbox.state == NSOnState){
-            UserDefaults.standard.set(1, forKey: "RandBox")
-            
-        }
-        else {
-            Checkoff()
-        }
-    }
-    @IBAction func TTCPressed(_ sender: Any) {
-        UserDefaults.standard.set(1, forKey: "pg")
-        Checkoff()
-        relaunch()
-    }
-    @IBAction func MMLPressed(_ sender: Any) {
-        UserDefaults.standard.set(2, forKey: "pg")
-        Checkoff()
-        relaunch()
-    }
-    @IBAction func DDOCKPressed(_ sender: Any) {
-        UserDefaults.standard.set(3, forKey: "pg")
-        Checkoff()
-        relaunch()
-    }
-    @IBAction func DGPressed(_ sender: Any) {
-        UserDefaults.standard.set(4, forKey: "pg")
-        Checkoff()
-        relaunch()
-    }
-    @IBAction func BRRRGHPressed(_ sender: Any) {
-        UserDefaults.standard.set(5, forKey: "pg")
-        Checkoff()
-        relaunch()
-    }
-    @IBAction func DDLPressed(_ sender: Any) {
-        UserDefaults.standard.set(6, forKey: "pg")
-        Checkoff()
-        relaunch()
-    }
-    func notify(){
-        nc.ShowNotification(title: "Success!", details: "Background will change with the next restart.")
-    }
-    func Checkoff(){
-        UserDefaults.standard.set(0, forKey: "RandBox")
-        RandomCheckbox.state = NSOffState
-    }
-    func relaunch(){
-        let url = NSURL(fileURLWithPath: Bundle.main.resourcePath!) as URL
-        let path = url.deletingLastPathComponent().deletingLastPathComponent().absoluteString
-        let task = Process()
-        task.launchPath = "/usr/bin/open"
-        task.arguments = [path]
-        task.launch()
-        exit(0)
-    }
-}
+
 

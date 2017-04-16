@@ -9,5 +9,6 @@ target 'Project Altis' do
   pod 'SwiftyJSON'
   pod 'CryptoSwift'
   pod 'XCGLogger', '~> 4.0.0'
+  pod 'Sparkle'
 
 end

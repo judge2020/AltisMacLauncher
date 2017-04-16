@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		80A60CCA1E6B5D06008C06A0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A60CC91E6B5D06008C06A0 /* WebKit.framework */; };
+		80AABEBE1EA3E5F700501E98 /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AABEBD1EA3E5F700501E98 /* ThemeController.swift */; };
+		80AABEC01EA3E72400501E98 /* OptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AABEBF1EA3E72400501E98 /* OptionsController.swift */; };
+		80AABEC21EA3EB5200501E98 /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AABEC11EA3EB5200501E98 /* KeychainSwiftDistrib.swift */; };
+		80AABEC41EA3EB7F00501E98 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AABEC31EA3EB7F00501E98 /* Keychain.swift */; };
+		80AABEC61EA3F03700501E98 /* values.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80AABEC51EA3F03700501E98 /* values.txt */; };
+		80AABEC81EA3F51100501E98 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AABEC71EA3F51100501E98 /* LocalAuthentication.framework */; };
 		80C7CC4F1E6CF08D004A24D1 /* LaunchTewTew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7CC4E1E6CF08D004A24D1 /* LaunchTewTew.swift */; };
 		80C7CC511E6CF0C8004A24D1 /* LoginCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7CC501E6CF0C8004A24D1 /* LoginCheck.swift */; };
 		80C7CC531E6CF0D1004A24D1 /* DownloadFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7CC521E6CF0D1004A24D1 /* DownloadFiles.swift */; };
@@ -44,6 +50,12 @@
 
 /* Begin PBXFileReference section */
 		80A60CC91E6B5D06008C06A0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		80AABEBD1EA3E5F700501E98 /* ThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
+		80AABEBF1EA3E72400501E98 /* OptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsController.swift; sourceTree = "<group>"; };
+		80AABEC11EA3EB5200501E98 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
+		80AABEC31EA3EB7F00501E98 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		80AABEC51EA3F03700501E98 /* values.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = values.txt; path = "Project Altis/values.txt"; sourceTree = "<group>"; };
+		80AABEC71EA3F51100501E98 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		80C7CC4E1E6CF08D004A24D1 /* LaunchTewTew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchTewTew.swift; path = Core/LaunchTewTew.swift; sourceTree = "<group>"; };
 		80C7CC501E6CF0C8004A24D1 /* LoginCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginCheck.swift; path = Core/LoginCheck.swift; sourceTree = "<group>"; };
 		80C7CC521E6CF0D1004A24D1 /* DownloadFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadFiles.swift; path = Core/DownloadFiles.swift; sourceTree = "<group>"; };
@@ -75,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80AABEC81EA3F51100501E98 /* LocalAuthentication.framework in Frameworks */,
 				80A60CCA1E6B5D06008C06A0 /* WebKit.framework in Frameworks */,
 				80D450EE1E6B1BD200154B13 /* AppKit.framework in Frameworks */,
 				EF4C9359D35189FCD9F16ED5 /* Pods_Project_Altis.framework in Frameworks */,
@@ -111,6 +124,7 @@
 		80D450B31E6B02B000154B13 = {
 			isa = PBXGroup;
 			children = (
+				80AABEC51EA3F03700501E98 /* values.txt */,
 				80D450BE1E6B02B000154B13 /* Project Altis */,
 				80D450D01E6B02B000154B13 /* Project AltisTests */,
 				80D450DB1E6B02B000154B13 /* Project AltisUITests */,
@@ -136,6 +150,8 @@
 				80A60CCB1E6B5F6D008C06A0 /* Core */,
 				80D450F71E6B358C00154B13 /* Handlers */,
 				80D450BF1E6B02B000154B13 /* AppDelegate.swift */,
+				80AABEBD1EA3E5F700501E98 /* ThemeController.swift */,
+				80AABEBF1EA3E72400501E98 /* OptionsController.swift */,
 				80D450C11E6B02B000154B13 /* ViewController.swift */,
 				80D450C31E6B02B000154B13 /* Assets.xcassets */,
 				80D450C51E6B02B000154B13 /* Main.storyboard */,
@@ -166,6 +182,7 @@
 		80D450EC1E6B1BD100154B13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80AABEC71EA3F51100501E98 /* LocalAuthentication.framework */,
 				80A60CC91E6B5D06008C06A0 /* WebKit.framework */,
 				80D450ED1E6B1BD200154B13 /* AppKit.framework */,
 				A5EA9EE0133ECEBA905D2F74 /* Pods_Project_Altis.framework */,
@@ -180,6 +197,8 @@
 				80D450F91E6B35A900154B13 /* Click.swift */,
 				80D450FA1E6B35A900154B13 /* UrlHelper.swift */,
 				80C7CC541E6CF0F7004A24D1 /* NotificationHandler.swift */,
+				80AABEC11EA3EB5200501E98 /* KeychainSwiftDistrib.swift */,
+				80AABEC31EA3EB7F00501E98 /* Keychain.swift */,
 			);
 			name = Handlers;
 			sourceTree = "<group>";
@@ -308,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80D450C41E6B02B000154B13 /* Assets.xcassets in Resources */,
+				80AABEC61EA3F03700501E98 /* values.txt in Resources */,
 				80D450C71E6B02B000154B13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,13 +403,17 @@
 			files = (
 				80D450FC1E6B35A900154B13 /* Click.swift in Sources */,
 				80D450FD1E6B35A900154B13 /* UrlHelper.swift in Sources */,
+				80AABEC41EA3EB7F00501E98 /* Keychain.swift in Sources */,
 				80D450C21E6B02B000154B13 /* ViewController.swift in Sources */,
+				80AABEC01EA3E72400501E98 /* OptionsController.swift in Sources */,
+				80AABEBE1EA3E5F700501E98 /* ThemeController.swift in Sources */,
 				80D450FB1E6B35A900154B13 /* BackgroundImages.swift in Sources */,
 				80D450C01E6B02B000154B13 /* AppDelegate.swift in Sources */,
 				80C7CC511E6CF0C8004A24D1 /* LoginCheck.swift in Sources */,
 				80C7CC551E6CF0F7004A24D1 /* NotificationHandler.swift in Sources */,
 				80C7CC531E6CF0D1004A24D1 /* DownloadFiles.swift in Sources */,
 				80C7CC4F1E6CF08D004A24D1 /* LaunchTewTew.swift in Sources */,
+				80AABEC21EA3EB5200501E98 /* KeychainSwiftDistrib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AHMQSX5S6N;
 				INFOPLIST_FILE = "Project Altis/Info.plist";
@@ -551,6 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AHMQSX5S6N;
 				INFOPLIST_FILE = "Project Altis/Info.plist";
