@@ -22,7 +22,6 @@ class ViewController: NSViewController, WebPolicyDelegate {
     @IBOutlet var LoginInfo: NSTextField!
     @IBOutlet var UsernameField: NSTextField!
     @IBOutlet var PasswordField: NSSecureTextField!
-    @IBOutlet var SaveLoginBox: NSButton!
     
     //go ahead and initialize the things needed.
     let clickSound = ClickSoundHandler()
@@ -46,14 +45,10 @@ class ViewController: NSViewController, WebPolicyDelegate {
         let saveLogin = UserDefaults.standard.integer(forKey: "savelogin")
         let Login = UserDefaults.standard.string(forKey: "login")
         
-        if (saveLogin == 1){
-            SaveLoginBox.state = NSOnState
-            if (Login != nil){
-                UsernameField.stringValue = (Login)!
-            }
+        if (saveLogin == 1 && Login != nil){
+            UsernameField.stringValue = (Login)!
         }
         else{
-            SaveLoginBox.state = NSOffState
             UsernameField.stringValue = ""
         }
         
@@ -207,14 +202,6 @@ class ViewController: NSViewController, WebPolicyDelegate {
     //
     @IBAction func PassEnterPressed(_ sender: Any) {
         PlayPressed("LUL")
-    }
-    @IBAction func CheckBoxSaveChange(_ sender: Any) {
-        print("TRIGGERED")
-        if (SaveLoginBox.state == NSOnState){
-            UserDefaults.standard.set(1, forKey: "savelogin")
-            return
-        }
-        UserDefaults.standard.set(0, forKey: "savelogin")
     }
     
     //

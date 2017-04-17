@@ -719,7 +719,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="OptionsPressed:" target="XfG-lQ-9wD" id="fRq-WP-xLd"/>
-                                    <segue destination="OJu-MX-UCI" kind="popover" popoverAnchorView="ZUq-mg-5ah" popoverBehavior="t" preferredEdge="maxY" id="eHN-fO-gMB"/>
+                                    <segue destination="OJu-MX-UCI" kind="popover" popoverAnchorView="ZUq-mg-5ah" popoverBehavior="t" preferredEdge="maxY" id="4RA-Zk-xZm"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYl-EO-Gqg">
@@ -731,17 +731,6 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="GroupTrackerPressed:" target="XfG-lQ-9wD" id="Dpf-u7-5Um"/>
-                                </connections>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLQ-yX-GQ6">
-                                <rect key="frame" x="829" y="297" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Save User" bezelStyle="regularSquare" imagePosition="left" inset="2" id="HFW-jC-MNj">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="CheckBoxSaveChange:" target="XfG-lQ-9wD" id="oN4-He-Nb8"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHF-au-iAd">
@@ -789,17 +778,6 @@
                                     <action selector="PassEnterPressed:" target="XfG-lQ-9wD" id="Byv-pk-fYP"/>
                                 </connections>
                             </secureTextField>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gb9-BP-TkI">
-                                <rect key="frame" x="831" y="316" width="90" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="play" imagePosition="only" alignment="center" alternateImage="play_h" imageScaling="proportionallyUpOrDown" inset="2" id="HwT-Ju-689">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="PlayPressed:" target="XfG-lQ-9wD" id="SqO-cm-8Id"/>
-                                </connections>
-                            </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFJ-fv-sh9">
                                 <rect key="frame" x="26" y="3" width="90" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -863,6 +841,17 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gb9-BP-TkI">
+                                <rect key="frame" x="831" y="310" width="90" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="play" imagePosition="only" alignment="center" alternateImage="play_h" imageScaling="proportionallyUpOrDown" inset="2" id="HwT-Ju-689">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="PlayPressed:" target="XfG-lQ-9wD" id="SqO-cm-8Id"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -872,7 +861,6 @@
                         <outlet property="LoginInfo" destination="10o-c4-Il0" id="Jia-qZ-dLH"/>
                         <outlet property="PasswordField" destination="qpY-st-yYg" id="a5Y-EK-3jz"/>
                         <outlet property="PlayButton" destination="gb9-BP-TkI" id="hfi-yI-NQs"/>
-                        <outlet property="SaveLoginBox" destination="HLQ-yX-GQ6" id="VTk-aR-m9S"/>
                         <outlet property="UsernameField" destination="veZ-mE-vRs" id="xZq-ge-Z6S"/>
                         <outlet property="WebView" destination="XIz-8y-Zbe" id="bJt-VQ-xvO"/>
                     </connections>
@@ -986,21 +974,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="225" height="224"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3Q-8l-7gf">
-                                <rect key="frame" x="18" y="181" width="151" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Secure with Touch ID" bezelStyle="regularSquare" imagePosition="left" inset="2" id="71S-kx-gcT">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="TouchidPressed:" target="OJu-MX-UCI" id="qUo-WI-MfG"/>
-                                </connections>
-                            </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-87-fnp">
-                                <rect key="frame" x="18" y="201" width="189" height="18"/>
+                                <rect key="frame" x="18" y="174" width="189" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Store password in Keychain" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wMI-JA-ntn">
+                                <buttonCell key="cell" type="check" title="Save Password (Keychain)" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wMI-JA-ntn">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1008,10 +985,33 @@
                                     <action selector="KeychainPressed:" target="OJu-MX-UCI" id="Upa-k7-wDd"/>
                                 </connections>
                             </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLQ-yX-GQ6">
+                                <rect key="frame" x="18" y="194" width="117" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Save Username" bezelStyle="regularSquare" imagePosition="left" inset="2" id="HFW-jC-MNj">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="CheckBoxSaveChange:" target="OJu-MX-UCI" id="5KG-3r-4k5"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3Q-8l-7gf">
+                                <rect key="frame" x="18" y="154" width="126" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Require Touch ID" bezelStyle="regularSquare" imagePosition="left" inset="2" id="71S-kx-gcT">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="TouchidPressed:" target="OJu-MX-UCI" id="qUo-WI-MfG"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="Keychainbox" destination="dbi-87-fnp" id="lZn-uz-Aii"/>
+                        <outlet property="SaveLoginBox" destination="HLQ-yX-GQ6" id="Crf-Zd-dtK"/>
                         <outlet property="Touchidbox" destination="r3Q-8l-7gf" id="pYf-xy-f8k"/>
                     </connections>
                 </viewController>

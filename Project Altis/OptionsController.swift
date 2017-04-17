@@ -17,6 +17,7 @@ class OptionsController : NSViewController {
     
     @IBOutlet var Keychainbox: NSButton!
     @IBOutlet var Touchidbox: NSButton!
+    @IBOutlet var SaveLoginBox: NSButton!
     
     
     override func viewDidLoad() {
@@ -29,9 +30,9 @@ class OptionsController : NSViewController {
             Keychainbox.state = NSOnState
         }
         
-        
-        
-        
+        if(UserDefaults.standard.integer(forKey: "savelogin") == 1){
+            SaveLoginBox.state = NSOnState
+        }
         
         UpdateTouchIdBox()
     }
@@ -62,6 +63,15 @@ class OptionsController : NSViewController {
             UserDefaults.standard.set(false, forKey: "Touchid")
         }
         UpdateTouchIdBox()
+    }
+    
+    @IBAction func CheckBoxSaveChange(_ sender: Any) {
+        print("TRIGGERED")
+        if (SaveLoginBox.state == NSOnState){
+            UserDefaults.standard.set(1, forKey: "savelogin")
+            return
+        }
+        UserDefaults.standard.set(0, forKey: "savelogin")
     }
     
     func UpdateTouchIdBox(){
