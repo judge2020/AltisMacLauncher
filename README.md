@@ -1,7 +1,7 @@
 # AltisMacLauncher
 Project Altis launcher for mac - looks like Win.
 
-https://youtu.be/QQXQnsGaqAc
+https://youtu.be/r7xegg1l0x4
 
 ## Programming with swift as compared to `C#`
 
