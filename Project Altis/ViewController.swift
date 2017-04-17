@@ -47,6 +47,7 @@ class ViewController: NSViewController, WebPolicyDelegate {
         
         if (saveLogin == 1 && Login != nil){
             UsernameField.stringValue = (Login)!
+            
         }
         else{
             UsernameField.stringValue = ""
