@@ -97,7 +97,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Project_Altis" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386" y="-588"/>
+            <point key="canvasLocation" x="946" y="-311"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -131,7 +131,7 @@
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AN0-at-xzR">
                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="666"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" id="pcP-BK-QfH"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="CreateAccount" id="pcP-BK-QfH"/>
                             </imageView>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weu-rE-ZY6">
                                 <rect key="frame" x="869" y="3" width="90" height="41"/>
@@ -278,7 +278,7 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gb9-BP-TkI">
                                 <rect key="frame" x="831" y="310" width="90" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="play" imagePosition="only" alignment="center" alternateImage="play_h" imageScaling="proportionallyUpOrDown" inset="2" id="HwT-Ju-689">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="CreateAccount" imagePosition="only" alignment="center" alternateImage="CreateAccount" imageScaling="proportionallyUpOrDown" inset="2" id="HwT-Ju-689">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -294,7 +294,7 @@
                         <outlet property="DownloadProgress" destination="7Dv-3i-pEA" id="4g5-yf-Azj"/>
                         <outlet property="LoginInfo" destination="10o-c4-Il0" id="Jia-qZ-dLH"/>
                         <outlet property="PasswordField" destination="qpY-st-yYg" id="a5Y-EK-3jz"/>
-                        <outlet property="PlayButton" destination="gb9-BP-TkI" id="hfi-yI-NQs"/>
+                        <outlet property="PlayButton" destination="gb9-BP-TkI" id="DXY-FE-kqs"/>
                         <outlet property="UsernameField" destination="veZ-mE-vRs" id="xZq-ge-Z6S"/>
                         <outlet property="WebView" destination="XIz-8y-Zbe" id="bJt-VQ-xvO"/>
                     </connections>
@@ -457,12 +457,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CreateAccount" width="90" height="41"/>
         <image name="credits" width="90" height="41"/>
         <image name="discord" width="90" height="41"/>
         <image name="group" width="90" height="41"/>
         <image name="options" width="90" height="41"/>
-        <image name="play" width="90" height="41"/>
-        <image name="play_h" width="90" height="41"/>
         <image name="theme" width="90" height="41"/>
         <image name="website" width="90" height="41"/>
     </resources>

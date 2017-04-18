@@ -12,7 +12,7 @@ import AVFoundation
 import Foundation
 import WebKit
 
-class ViewController: NSViewController, WebPolicyDelegate {
+class ViewController: NSViewController, WebPolicyDelegate, NSTextFieldDelegate {
     
     //IBOutlets for storyboard elements
     @IBOutlet var webView: WebView!
@@ -22,6 +22,7 @@ class ViewController: NSViewController, WebPolicyDelegate {
     @IBOutlet var LoginInfo: NSTextField!
     @IBOutlet var UsernameField: NSTextField!
     @IBOutlet var PasswordField: NSSecureTextField!
+    @IBOutlet var PlayButton: NSButton!
     
     //go ahead and initialize the things needed.
     let clickSound = ClickSoundHandler()
@@ -38,15 +39,21 @@ class ViewController: NSViewController, WebPolicyDelegate {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
+        //set window topmost
+        NSApp.activate(ignoringOtherApps: true)
+
+        //subscribe to text field change
+        UsernameField.delegate = self
+
         //if user has save login enabled
         let saveLogin = UserDefaults.standard.integer(forKey: "savelogin")
         let Login = UserDefaults.standard.string(forKey: "login")
         
         if (saveLogin == 1 && Login != nil){
             UsernameField.stringValue = (Login)!
+            //trigger username did change
+            PlayButton.image = #imageLiteral(resourceName: "play")
             
         }
         else{
@@ -59,6 +66,7 @@ class ViewController: NSViewController, WebPolicyDelegate {
         if (this == 1){
             //rand backgrounds
             Backg.SetRandomBackground(ImageView: BackgroundImage)
+            PlayButton.image = #imageLiteral(resourceName: "play")
         }
         else{
             //startup when new background is chosen
@@ -115,7 +123,13 @@ class ViewController: NSViewController, WebPolicyDelegate {
         clickSound.playSound()
         //check for fields to be present
         if (UsernameField.stringValue.isEmpty || PasswordField.stringValue.isEmpty){
-            Notification.ShowNotification(title: "Invalid Username and password.", details: "Please fill in both fields.", view: self.view, clickSound: clickSound)
+            //Create Account button
+
+            if (!URL.OpenUrl(url: "https://projectalt.is/maclauncher-createaccount")){
+                Notification.ShowNotification(title: "Failure.", details: "Unable to open URL.", view: self.view, clickSound: clickSound)
+            }
+
+            //Notification.ShowNotification(title: "Invalid Username and password.", details: "Please fill in both fields.", view: self.view, clickSound: clickSound)
             return
         }
         
@@ -213,7 +227,21 @@ class ViewController: NSViewController, WebPolicyDelegate {
     @IBAction func UsernameFieldChanged(_ sender: Any) {
         UserDefaults.standard.set(UsernameField.stringValue, forKey: "login")
     }
-
+    
+    //
+    //
+    //username text field did change
+    //
+    //
+    override func controlTextDidChange(_ obj: Notification) {
+        //no need to use _ obj because we know it's username field
+        if(UsernameField.stringValue == ""){
+            PlayButton.image = #imageLiteral(resourceName: "CreateAccount")
+            return
+        }
+        PlayButton.image = #imageLiteral(resourceName: "play")
+    }
+    
 }
 
 

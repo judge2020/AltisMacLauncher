@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801F5E301EA668C0005BF125 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F5E2F1EA668C0005BF125 /* UsernameTextField.swift */; };
 		80A60CCA1E6B5D06008C06A0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A60CC91E6B5D06008C06A0 /* WebKit.framework */; };
 		80AABEBE1EA3E5F700501E98 /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AABEBD1EA3E5F700501E98 /* ThemeController.swift */; };
 		80AABEC01EA3E72400501E98 /* OptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AABEBF1EA3E72400501E98 /* OptionsController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		801F5E2F1EA668C0005BF125 /* UsernameTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		80A60CC91E6B5D06008C06A0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		80AABEBD1EA3E5F700501E98 /* ThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
 		80AABEBF1EA3E72400501E98 /* OptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				80AABEBD1EA3E5F700501E98 /* ThemeController.swift */,
 				80AABEBF1EA3E72400501E98 /* OptionsController.swift */,
 				80D450C11E6B02B000154B13 /* ViewController.swift */,
+				801F5E2F1EA668C0005BF125 /* UsernameTextField.swift */,
 				80D450C31E6B02B000154B13 /* Assets.xcassets */,
 				80D450C51E6B02B000154B13 /* Main.storyboard */,
 				80D450C81E6B02B000154B13 /* Info.plist */,
@@ -412,6 +415,7 @@
 				80C7CC511E6CF0C8004A24D1 /* LoginCheck.swift in Sources */,
 				80C7CC551E6CF0F7004A24D1 /* NotificationHandler.swift in Sources */,
 				80C7CC531E6CF0D1004A24D1 /* DownloadFiles.swift in Sources */,
+				801F5E301EA668C0005BF125 /* UsernameTextField.swift in Sources */,
 				80C7CC4F1E6CF08D004A24D1 /* LaunchTewTew.swift in Sources */,
 				80AABEC21EA3EB5200501E98 /* KeychainSwiftDistrib.swift in Sources */,
 			);
